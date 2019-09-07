@@ -21,8 +21,9 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 const App = () => {
     return (
         <Provider store={store}>
-            {/* <Header /> */}
+            <Header />
             <Wrapper>
+                fgfg
                 <Router />
             </Wrapper>
         </Provider>

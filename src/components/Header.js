@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 
 class Header extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
+    static propTypes = {}
 
     render() {
-        return (
-            fdfsdf
-        ); //<Header style={styles.header} />
+        return <Header style={styles.header} />
     }
 }
 
@@ -21,12 +16,5 @@ const styles = StyleSheet.create({
     }
 })
 
-const mapStateToProps = (state) => ({
 
-})
-
-const mapDispatchToProps = {
-
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default Header;

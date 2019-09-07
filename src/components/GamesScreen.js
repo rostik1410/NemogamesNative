@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 class Games extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
+    static propTypes = {}
+    static navigationOptions = {
+        title: 'Games',
+      };
 
     render() {
         return (

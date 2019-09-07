@@ -10,8 +10,7 @@ class Router extends Component {
             Stream: { screen: StreamScreen },
         });
 
-        return lala;
-        // return createAppContainer(MainNavigator);
+        return createAppContainer(MainNavigator);
     }
 }
 

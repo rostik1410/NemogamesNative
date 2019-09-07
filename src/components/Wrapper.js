@@ -6,7 +6,7 @@ class Wrapper extends Component {
         return (
             <SafeAreaView>
                 <ScrollView style={styles.wrapper}>
-
+                    ffdg
                 </ScrollView>
             </SafeAreaView>
             
