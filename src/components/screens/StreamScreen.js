@@ -3,10 +3,8 @@ import { View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-class Matches extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
+class StreamScreen extends Component {
+    static propTypes = {}
 
     render() {
         return (
@@ -25,4 +23,4 @@ const mapDispatchToProps = {
     
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Matches)
+export default connect(mapStateToProps, mapDispatchToProps)(StreamScreen)

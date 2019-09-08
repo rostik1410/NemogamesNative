@@ -6,12 +6,13 @@ class Header extends Component {
     static propTypes = {}
 
     render() {
-        return <Header style={styles.header} />
+        return <View style={styles.header} />
     }
 }
 
 const styles = StyleSheet.create({
     header: {
+        height: 70,
         backgroundColor: '#2C2444',
     }
 })

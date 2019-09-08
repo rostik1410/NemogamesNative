@@ -12,20 +12,18 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import rootReducer from './src/reducers';
-import Wrapper from './src/components/Wrapper';
-import Header from './src/components/Header';
-import Router from './src/ScreensRouter';
+import { createAppContainer } from 'react-navigation';
+import MainNavigator from './src/ScreensRouter';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
-
+const Router = createAppContainer(MainNavigator);
 const App = () => {
     return (
         <Provider store={store}>
-            <Header />
-            <Wrapper>
-                fgfg
-                <Router />
-            </Wrapper>
+            {/* <Header />
+            <Wrapper> */}
+            <Router />
+            {/* </Wrapper> */}
         </Provider>
     );
 };

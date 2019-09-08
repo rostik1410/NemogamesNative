@@ -7,7 +7,7 @@ export const getGames = () => {
             type: constants.LOADER_START,
         });
         axios
-            .get(`api/games`)
+            .get(`https://nemogames.tk/api/games`)
             .then(response => {
                 dispatch({
                     type: constants.GET_GAMES_SUCCESS,

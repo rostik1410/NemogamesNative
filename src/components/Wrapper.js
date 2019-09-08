@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
+import React, { Component } from 'react';
+import { StyleSheet, ScrollView } from 'react-native';
 
 class Wrapper extends Component {
     render() {
         return (
-            <SafeAreaView>
-                <ScrollView style={styles.wrapper}>
-                    ffdg
-                </ScrollView>
-            </SafeAreaView>
-            
+            <ScrollView style={styles.wrapper}>
+                {this.props.children}
+            </ScrollView>
         );
     }
 }
@@ -21,4 +18,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Wrapper
+export default Wrapper;

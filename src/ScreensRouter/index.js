@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import React from 'react';
+import { createStackNavigator } from 'react-navigation-stack';
 
-class Router extends Component {
+import GamesScreen from '../components/screens/GamesScreen';
+import StreamsScreen from '../components/screens/StreamsScreen';
+import StreamScreen from '../components/screens/StreamScreen';
+import Header from '../components/Header';
 
-    render() {
-        const MainNavigator = createStackNavigator({
-            Games: { screen: GamesScreen },
-            Streams: { screen: StreamsScreen },
-            Stream: { screen: StreamScreen },
-        });
+const MainNavigator = createStackNavigator(
+    {
+        Games: { screen: GamesScreen },
+        Streams: { screen: StreamsScreen },
+        Stream: { screen: StreamScreen },
 
-        return createAppContainer(MainNavigator);
+    },
+    {
+        initialRouteName: 'Games',
+        defaultNavigationOptions: {
+            header: <Header/>
+        }
     }
-}
+);
 
-export default (Router)
+export default MainNavigator;

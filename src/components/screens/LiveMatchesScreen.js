@@ -3,11 +3,8 @@ import { View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-class Games extends Component {
+class LiveMatchesScreen extends Component {
     static propTypes = {}
-    static navigationOptions = {
-        title: 'Games',
-      };
 
     render() {
         return (
@@ -19,11 +16,11 @@ class Games extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+    
 })
 
 const mapDispatchToProps = {
-
+    
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Games)
+export default connect(mapStateToProps, mapDisprops)(LiveMatchesScreen)
