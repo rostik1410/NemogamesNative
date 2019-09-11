@@ -15,6 +15,9 @@ import rootReducer from './src/reducers';
 import { createAppContainer } from 'react-navigation';
 import MainNavigator from './src/ScreensRouter';
 
+window.axios = require('axios');
+window.axios.defaults.baseURL = 'https://nemogames.tk/';
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 const Router = createAppContainer(MainNavigator);
 const App = () => {

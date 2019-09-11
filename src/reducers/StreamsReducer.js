@@ -2,7 +2,7 @@ import constants from "../constants/index";
 
 const initialState = {
     streams: [],
-    stream: '',
+    stream: null,
     error: false,
 }
 
@@ -32,7 +32,7 @@ export default (state = initialState, action) => {
         case constants.GET_STREAM_ERROR:
             return {
                 ...state,
-                stream: [],
+                stream: null,
                 error: action.data,
             };
 

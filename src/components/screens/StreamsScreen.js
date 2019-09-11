@@ -1,27 +1,46 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import Wrapper from '../Wrapper';
+import ItemCard from '../ItemCard';
+import { getStreams } from '../../actions/StreamsActions';
 
 class StreamsScreen extends Component {
-    static propTypes = {}
+    static propTypes = {
+        dispatch: PropTypes.func.isRequired
+    }
+
+    componentDidMount() {
+        this.props.dispatch(getStreams(this.props.navigation.state.params.data));
+    }
 
     render() {
+        const { streams, error, navigation } = this.props
+
         return (
             <Wrapper>
-                <Text> prop </Text>
+                {!error && streams && streams.map(stream =>
+                    <ItemCard
+                        key={stream.id}
+                        name={stream.title}
+                        image={stream.thumbnail_url}
+                        data={stream.user_name}
+                        nextScreen="Stream"
+                        navigation={navigation}
+                    />
+                )}
             </Wrapper>
         )
     }
 }
 
-const mapStateToProps = (state) => ({
-    
-})
-
-const mapDispatchToProps = {
-    
+const mapStateToProps = (state) => {
+    const { streams, error } = state.streams;
+    return {
+        streams,
+        error,
+    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StreamsScreen)
+export default connect(mapStateToProps)(StreamsScreen)
