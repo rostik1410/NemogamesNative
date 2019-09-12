@@ -18,13 +18,17 @@ class StreamScreen extends Component {
 
     render() {
         const { stream, error } = this.props;
+        
+        //super duper Костиль!
+        let html = stream ? stream.substring(0, 7) + ' style=\"position: absolute; width: 100%; height: 100%;\" ' + stream.substring(7) : null;
+        
         return (
             <Wrapper>
-                {!error && stream &&
+                {!error && html &&
                     <WebView
                         scalesPageToFit={true}
                         javaScriptEnabled={true}
-                        source={{ html: stream }}
+                        source={{ html: html }}
                         style={styles.video}
                     />
                 }
@@ -35,6 +39,7 @@ class StreamScreen extends Component {
 
 const styles = StyleSheet.create({
     video: {
+        backgroundColor: '#18142E',
         paddingBottom: '56.25%',
     }
 })

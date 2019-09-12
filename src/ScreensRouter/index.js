@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator, HeaderBackButton } from 'react-navigation-stack';
 
 import GamesScreen from '../components/screens/GamesScreen';
 import StreamsScreen from '../components/screens/StreamsScreen';
@@ -9,15 +9,20 @@ import Header from '../components/Header';
 const MainNavigator = createStackNavigator(
     {
         Games: { screen: GamesScreen },
-        Streams: { screen: StreamsScreen },
+        Streams: {
+            screen: StreamsScreen,
+            navigationOptions: ({ navigation }) => ({
+                headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} />
+            }),
+        },
         Stream: { screen: StreamScreen },
 
     },
     {
         initialRouteName: 'Games',
-        defaultNavigationOptions: {
-            header: <Header/>
-        }
+        defaultNavigationOptions: ({ navigation }) => ({
+            header: <Header navigation={navigation} />,
+        })
     }
 );
 
