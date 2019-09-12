@@ -12,7 +12,7 @@ class StreamsScreen extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(getStreams(this.props.navigation.state.params.data));
+        this.props.dispatch(getStreams({ game_id: this.props.navigation.state.params.data }));
     }
 
     render() {
